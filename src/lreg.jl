@@ -24,7 +24,7 @@ function llsq(X::AbstractMatrix{T}, Y::AbstractVecOrMat{T};
     if trans
         mX, nX = size(X)
         size(Y, 1) == nX || throw(DimensionMismatch("Dimensions of X and Y mismatch."))
-        mX <= nX || error("mX <= nX is required when trans is false.")
+        mX <= nX || error("mX <= nX is required when trans is true.")
     else
         mX, nX = size(X)
         size(Y, 1) == mX || throw(DimensionMismatch("Dimensions of X and Y mismatch."))
